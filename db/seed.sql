@@ -3,15 +3,15 @@ INSERT INTO department
 (name)
 VALUES 
 ('Sales'),
-("management"),
-("hr");
+("Management"),
+("HR");
 
 INSERT INTO role
 (title, salary, department_id)
 VALUES 
-("sales lead", 50000, 1),
-("manager", 100000, 2),
-("hr representative", 50000, 3);
+("Sales Lead", 50000, 1),
+("Manager", 100000, 2),
+("HR Representative", 50000, 3);
 
 INSERT INTO employee
 (first_name, last_name, role_id, manager_id)

@@ -8,38 +8,38 @@ function mainMenu() {
         message: "What would you like to do?",
         name: "choice",
         choices: [
-          "View Departments",
-          "View Role",
-          "View Employees",
-          "Add Department",
-          "Add Role",
-          "Add Employee",
-          "Update Employee",
+          "View All Departments",
+          "View All Roles",
+          "View All Employees",
+          "Add A Department",
+          "Add A Role",
+          "Add An Employee",
+          "Update An Employee Role",
           "Quit",
         ],
       },
     ])
     .then((answers) => {
       switch (answers.choice) {
-        case "View Departments":
+        case "View All Departments":
           getAllDepartments();
           break;
-        case "View Role":
+        case "View All Roles":
           viewAllRoles();
           break;
-        case "View Employees":
+        case "View All Employees":
           viewAllEmployees();
           break;
-        case "Add Department":
+        case "Add A Department":
           createDepartment();
           break;
-        case "Add Role":
+        case "Add A Role":
           createRole();
           break;
-        case "Add Employee":
+        case "Add An Employee":
           createEmployee();
           break;
-        case "Update Employee":
+        case "Update An Employee Role":
           updateEmployeeRole();
           break;
         default:
@@ -75,14 +75,15 @@ function createDepartment() {
     .prompt([
       {
         type: "input",
-        name: "department_name",
+        name: "name",
         message: "Name of the new department?",
       },
     ])
     .then((res) => {
       let name = res;
       store.createDepartment(name);
-    });
+    })
+    .then(() => mainMenu());
 }
 function createRole() {
   store.getAllDepartments().then(([departments]) => {
