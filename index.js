@@ -129,14 +129,6 @@ function createEmployee() {
       };
     });
 
-    // store.getAllDepartments().then(([departments]) => {
-    //   const departmentChoices = departments.map((department) => {
-    //     return {
-    //       name: department.name,
-    //       value: department.id,
-    //     };
-    //   });
-
     store.viewAllEmployees().then(([employees]) => {
       const managerChoices = employees.map((employee) => {
         return {
@@ -177,45 +169,7 @@ function createEmployee() {
         });
     });
   });
-  // });
 }
-
-//   }
-// ])
-// .then((res) => {
-//   let firstName = res.first_name;
-//   let lastName = res.last_name;
-
-//   })
-
-//   inquirer
-//   .prompt({
-//
-//   })
-//   .then((res) => {
-//     let roleId = res.role_id;
-//     managerChoices.unshift({ name: "None", value: null });
-
-//     inquirer
-//     .prompt({
-//
-//     .then((res) => {
-//       let employee = {
-//         first_name: firstName,
-//         last_name: lastName,
-//         role_id: roleId,
-//         manager_id: res.manager_id,
-//         is_manager: 0
-//       };
-
-//       utilQueries.createEmployee(employee);
-//     })
-//     .then(() =>
-//       console.log(`\n ${firstName} ${lastName} has been added! \n`)
-//     )
-//     .then(() => startApp());
-//   })
-// })
 
 function updateEmployeeRole() {
   store.viewAllEmployees().then(([employees]) => {
@@ -255,29 +209,6 @@ function updateEmployeeRole() {
     });
   });
 }
-
-//       .then((res) => {
-//         let employeeId = res.employeeId;
-//         utilQueries.viewAllRoles().then(([rows]) => {
-//           let roles = rows;
-//           const roleChoices = roles.map(({ id, title }) => ({
-//             name: title,
-//             value: id,
-//           }));
-
-//           inquirer
-//             .prompt([
-//
-//             ])
-//             .then((res) =>
-//               utilQueries.updateEmployeeRole(employeeId, res.roleId)
-//             )
-//             .then(() => console.log("The role has been updated"))
-//             .then(() => startApp());
-//         });
-//       });
-//   });
-// }
 
 function quit() {
   process.exit();
